@@ -3,103 +3,102 @@
     src: url("/public/assets/fonts/Vazir.woff");
     font-weight: normal;
     font-style: normal;
-}
-
-body{
+  }
+  body {
     direction: rtl;
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     background-color: #1c1b1b;
-}
-
-*{
+  }
+  
+  * {
     font-family: vazir;
     direction: rtl;
     text-align: right;
-    
-    ul{
-        list-style: none;
-    }
-}
-
-// -----------= sidebar =---------
-.sidebar{
+  }
+  * ul {
+    list-style: none;
+  }
+  
+  .sidebar {
+    position: fixed;
     width: 250px;
-    height: 95vh;
-    margin-top: 2.5vh;
-    margin-right: 15px;
+    right: -100%;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    border-radius: 20px 0 0 20px;
+    background: rgb(88, 88, 88);
+    transition: all .4s ease-in-out;
+  }
+  .sidebar .userBox img {
+    width: 80px;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+  .sidebar .userBox .user_title {
     border-radius: 20px;
-    background: #ffffff3e;
-    // position: relative;
-    // right: -250px;
-    // transition: all .4s ease-in-out;
-    // display: none;
-
-    .userBox {
-        
-        img {
-            width: 80px;
-            border-radius: 50%;
-            border: 2px solid white;
-        }
-        .user_title{
-            border-radius: 20px;
-            font-size: 15px;
-            cursor: pointer;
-        }
-        .provider{
-            background: #fefefe48;
-            height: 2px;
-            width: 80%;
-            border-radius: 20px;
-        }
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .sidebar .userBox .provider {
+    background: rgba(254, 254, 254, 0.2823529412);
+    height: 2px;
+    width: 80%;
+    border-radius: 20px;
+  }
+  .sidebar .sidebar_content{
+    height:fit-content;
+  }
+  .sidebar .sidebar_content ul li {
+    width: 100% !important;
+    height: 30px;
+    position: relative;
+  }
+  .sidebar .sidebar_content ul li .NavLink_hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    left: 2px !important;
+    border-radius: 12px;
+    padding: 4px 0 0 0;
+    transition: all 0.2s ease-in-out;
+  }
+  .sidebar .sidebar_content ul li .NavLink_hover:hover, .sidebar .sidebar_content ul li .NavLink_active {
+    background: rgba(255, 0, 0, 0.4588235294);
+  }
+  .sidebar .sidebar_content ul li .provider {
+    background: rgba(254, 254, 254, 0.2823529412);
+    height: 2px;
+    width: 80%;
+    border-radius: 20px;
+  }
+  .sidebar .btn_sidebar {
+    position: absolute;
+    bottom: 30px;
+  }
+  
+  .content {
+    width: 100%;
+    height: 100vh;
+  }
+  @media screen and (min-width:768px) {
+    .content{
+        width: calc(100% - 255px);
+        position: fixed;
+        left: 0;
+    }
+    .sidebar{
+        right: 0% !important;
     }
 
-    .sidebar_content{
-        ul li {
-            width: 100% !important;
-            height: 40px;
-            position: relative;
-
-            .NavLink_hover{
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                text-align: center;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-decoration: none;
-                font-size: 18px;
-                color: white;
-                left: 2px !important;
-                border-radius: 12px;
-                padding: 4px 0 0 0;
-                transition: all 0.2s ease-in-out;
-            }
-            .NavLink_hover:hover , .NavLink_active{
-                background: #ff000075;
-            }
-            .provider{
-                background: #fefefe48;
-                height: 2px;
-                width: 80%;
-                border-radius: 20px;
-            }
-        }
-    }
-
-    .btn_sidebar{
-        margin-top: 100px;    
-    }
-}
-
-
-// -----------= content =---------
-.content{
-    width: calc(100% - 255px);
-
-}
-
+  }

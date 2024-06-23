@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import imgLogo from './image/user1.jpg'
 import { Link, NavLink } from 'react-router-dom';
+import { sideContext } from './Context/context';
 
 const Sidebar = ()=>{
 
+    const {sidebar ,setSideBar} = useContext(sideContext)
 
 
     return(
-        <div className='sidebar py-5 d-flex flex-column'>
+        <div className='sidebar py-5 d-flex flex-column' style={sidebar ? {right:0} : {right:-255}}>
             <div className="userBox py-4 d-flex flex-column align-items-center justify-content-center">
                 <img src={imgLogo} className='img_logo' />
                 <h5 className='user_title mt-3 bg-white px-2 py-1 '>حامد باقری</h5>
